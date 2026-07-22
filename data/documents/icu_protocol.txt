@@ -1,0 +1,2 @@
+Patients in ICU should maintain oxygen saturation above 94%.
+Heart rate above 100 bpm may indicate tachycardia.
