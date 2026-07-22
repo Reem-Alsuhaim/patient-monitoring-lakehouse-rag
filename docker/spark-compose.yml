@@ -1,0 +1,9 @@
+services:
+  spark:
+    image: apache/spark:3.5.1
+    container_name: spark
+    volumes:
+      - ../:/workspace
+    working_dir: /workspace
+    tty: true
+    command: tail -f /dev/null
