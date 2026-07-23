@@ -50,31 +50,36 @@ The project implements:
 
 
 # System Architecture
-                Patient Data
-                     |
-                     v
-             Kafka Producer
-                     |
-                     v
-          Schema Validation
-                     |
-          +----------+----------+
-          |                     |
-          v                     v
-   Bronze Delta Lake       Quarantine
-          |
-          v
-   Silver Delta Lake
-    (Cleaning + MERGE)
-          |
-          v
-    Gold Aggregations
-          |
-          v
-      RAG Pipeline
-          |
-          v
-   LLM Answer + Citations
+
+```text
+                         Patient Monitoring Data
+                                  |
+                                  v
+                          Kafka Ingestion
+                                  |
+                                  v
+                       Schema Validation Layer
+                                  |
+                    +-------------+-------------+
+                    |                           |
+                    v                           v
+             Bronze Delta Lake          Quarantine Records
+                    |
+                    v
+             Silver Delta Lake
+          (Cleaning + MERGE/UPSERT)
+                    |
+                    v
+              Gold Data Layer
+        (Aggregations & Analytics)
+                    |
+                    v
+              RAG Pipeline
+                    |
+                    v
+          LLM Answer Generation
+             + Source Citations
+```
 
 Pipeline flow:
 
@@ -185,31 +190,32 @@ Important configurations include:
 
 
 # Repository Structure
+```text
 patient-monitoring-capstone/
-
+│
 ├── notebooks/
-│ ├── 00_environment_test.ipynb
-│ ├── 01_ingestion_kafka_validation.ipynb
-│ ├── 02_delta_lakehouse.ipynb
-│ └── 03_rag_pipeline.ipynb
+│   ├── 00_environment_test.ipynb
+│   ├── 01_ingestion_kafka_validation.ipynb
+│   ├── 02_delta_lakehouse.ipynb
+│   └── 03_rag_pipeline.ipynb
 │
 ├── data/
-│ ├── documents
-│ ├── bronze
-│ ├── silver
-│ └── gold
-│
+│   ├── documents/
+│   ├── bronze/
+│   ├── silver/
+│   └── gold/
 │
 ├── docker/
-│ ├── kafka-compose.yml
-│ ├── spark-compose.yml
-│ └── airflow-compose.yml
+│   ├── kafka-compose.yml
+│   ├── spark-compose.yml
+│   └── airflow-compose.yml
 │
 ├── orchestration/
 │
 ├── requirements.txt
 │
 └── README.md
+```
 
 # Training Attribution
 Completed as part of ** Data Engineering for AI Systems** — SDAIA Academy (DAICO)
