@@ -216,20 +216,6 @@ Successful execution produces:
 - Invalid records routed to a dead-letter queue
 - Grounded RAG responses with document citations
 
-# Configuration and Environment Variables
-
-The project uses configuration values to connect different components.
-
-Important configurations include:
-
-| Variable | Description | Example |
-|----------|-------------|---------|
-| Kafka Bootstrap Server | Kafka connection endpoint | localhost:9092 |
-| Kafka Topic | Input data topic | patient_monitoring_raw |
-| Spark Configuration | Spark and Delta settings | DeltaCatalog |
-| Data Paths | Input/output locations | data/ |
-| Model Configuration | RAG model settings | HuggingFace model name |
-
 
 # Repository Structure
 ```text
