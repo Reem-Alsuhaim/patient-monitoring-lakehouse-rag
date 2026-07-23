@@ -1,0 +1,25 @@
+services:
+
+  airflow:
+    image: apache/airflow:2.9.3
+    platform: linux/amd64
+    container_name: airflow
+
+    ports:
+      - "8080:8080"
+
+    volumes:
+      - ../airflow/dags:/opt/airflow/dags
+
+    command: >
+      bash -c "
+      airflow db init &&
+      airflow users create
+      --username admin
+      --password admin
+      --firstname Admin
+      --lastname User
+      --role Admin
+      --email admin@example.com || true &&
+      airflow standalone
+      "
