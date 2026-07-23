@@ -2,7 +2,7 @@
 
 Student: Reem Alsuhaim
 
-Program: SDAIA Academy — Data Engineering for AI Systems (DAICO)
+Program: SDAIA Academy — DModern Data Engineering for AI Systems (DAICO)
 
 Session dates: 19 July 2026 – 23 July 2026
 
@@ -111,7 +111,7 @@ The project follows the Medallion Architecture:
 
 ### Bronze Layer
 
-Stores validated raw events while preserving the original structure.
+Stores validated patient monitoring records received from the ingestion layer while preserving the original event structure.
 
 ### Silver Layer
 
@@ -120,37 +120,30 @@ Responsible for:
 - Data cleaning
 - Deduplication
 - Business-key based MERGE operations
-
+- Incremental updates and inserts
 
 ### Gold Layer
 
 Contains analytical aggregates such as:
 
-- Ward-level statistics
-- Patient monitoring summaries
-- Alert-related metrics
+- Average heart rate by ward
+- Average oxygen saturation by ward
+- Patient counts per ward
+- Critical patient counts (oxygen level < 92%)
 
 
 ## 3. RAG Pipeline
 
 The Retrieval-Augmented Generation system enables users to ask questions and receive answers grounded in provided documents.
 
-Pipeline:
-Documents
-|
-Chunking
-|
-Embeddings
-|
-Dense Retrieval + BM25
-|
-Reciprocal Rank Fusion
-|
-Reranking
-|
-LLM Response Generation
-|
-Answer + Citations
+RAG Pipeline Features:
+- Document chunking
+- SentenceTransformer embeddings
+- FAISS vector store
+- BM25 keyword retrieval
+- Reciprocal Rank Fusion (RRF)
+- Cross-Encoder reranking
+- Citation-based answer generation
 
 # Prerequisites
 
@@ -171,8 +164,57 @@ Recommended environment:
 # Installation and Setup
 
 ## 1. Clone Repository
+
+```bash
+git clone <repository-url>
+cd patient-monitoring-capstone
+```
+
 ## 2. Install Python Dependencies
-## 3. Start Required Services
+
+```bash
+pip install -r requirements.txt
+```
+
+## 3. Start Kafka Services
+
+```bash
+docker compose -f docker/kafka-compose.yml up -d
+```
+
+## 4. Start Spark Services
+
+```bash
+docker compose -f docker/spark-compose.yml up -d
+```
+
+## 5. Execute Notebooks
+
+Run notebooks in the following order:
+
+1. 00_environment_test.ipynb
+2. 01_ingestion_kafka_validation.ipynb
+3. 02_delta_lakehouse.ipynb
+4. 03_rag_pipeline.ipynb
+
+# Failure Handling
+
+The project demonstrates the following failure scenarios:
+
+- Invalid Kafka records rejected through schema validation
+- Invalid records routed to a dead-letter topic
+- Delta Lake schema enforcement preventing invalid writes
+- Merge operations handling updates and inserts correctly
+
+# Expected Output
+
+Successful execution produces:
+
+- Valid patient records stored in Bronze
+- Cleaned and merged records stored in Silver
+- Aggregated ward statistics in Gold
+- Invalid records routed to a dead-letter queue
+- Grounded RAG responses with document citations
 
 # Configuration and Environment Variables
 
@@ -197,7 +239,9 @@ patient-monitoring-capstone/
 │   ├── 00_environment_test.ipynb
 │   ├── 01_ingestion_kafka_validation.ipynb
 │   ├── 02_delta_lakehouse.ipynb
-│   └── 03_rag_pipeline.ipynb
+│   ├── 03_rag_pipeline.ipynb
+│   ├── 04_orchestration_simulation.ipynb
+│   └── 05_openlineage.ipynb
 │
 ├── data/
 │   ├── documents/
@@ -218,8 +262,15 @@ patient-monitoring-capstone/
 ```
 
 # Training Attribution
-Completed as part of ** Data Engineering for AI Systems** — SDAIA Academy (DAICO)
+Completed as part of the SDAIA Academy Program:
 
-Cohort / session dates: 19 July 2026 – 23 July 2026 Trainer: Mohammed Albeladi
+Program: Modern Data Engineering for AI Systems
 
-SDAIA Academy on GitHub: https://github.com/SDAIAAcademy
+Session Dates:
+19 July 2026 – 23 July 2026
+
+Trainer:
+Mohammed Albeladi
+
+SDAIA Academy GitHub:
+https://github.com/SDAIAAcademy
