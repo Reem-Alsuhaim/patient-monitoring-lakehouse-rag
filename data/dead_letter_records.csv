@@ -1,0 +1,80 @@
+record,reason
+"{'patient_id': 'P002', 'heart_rate': 'HIGH', 'oxygen_level': 97}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P001', 'heart_rate': 82, 'oxygen_level': 98}","2 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'heart_rate': 'HIGH', 'oxygen_level': 97}","3 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'ward': 'ICU', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:01:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P001', 'heart_rate': 82, 'oxygen_level': 98}","2 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'heart_rate': 'HIGH', 'oxygen_level': 97}","3 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'ward': 'ICU', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:01:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P010', 'ward': 'Ward-B', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:45:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P001', 'heart_rate': 82, 'oxygen_level': 98}","2 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P001', 'h... 82, 'oxygen_level': 98}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'heart_rate': 'HIGH', 'oxygen_level': 97}","3 validation errors for PatientReading
+ward
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing
+event_time
+  Field required [type=missing, input_value={'patient_id': 'P002', 'h...GH', 'oxygen_level': 97}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.13/v/missing"
+"{'patient_id': 'P002', 'ward': 'ICU', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:01:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P010', 'ward': 'Ward-B', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:45:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"
+"{'patient_id': 'P010', 'ward': 'Ward-B', 'heart_rate': 'HIGH', 'oxygen_level': 97, 'event_time': '2026-07-22 10:45:00'}","1 validation error for PatientReading
+heart_rate
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='HIGH', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.13/v/int_parsing"

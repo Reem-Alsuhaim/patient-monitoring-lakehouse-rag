@@ -1,0 +1,9 @@
+Hypoxemia refers to an abnormally low level of oxygen in the blood. It is commonly assessed using pulse oximetry, which measures oxygen saturation. Healthy individuals typically maintain oxygen saturation values between 95 and 100 percent. Values below this range may indicate impaired oxygen delivery to tissues.
+
+Mild hypoxemia may cause few symptoms, while more severe cases can lead to shortness of breath, confusion, rapid breathing, increased heart rate, and cyanosis. In critically ill patients, prolonged oxygen deficiency may affect vital organs including the brain, heart, and kidneys.
+
+Common causes include pneumonia, chronic obstructive pulmonary disease, pulmonary edema, asthma exacerbations, respiratory infections, and impaired gas exchange in the lungs. Patients recovering from major surgery may also require close oxygen monitoring.
+
+In many hospital settings, oxygen saturation below 92 percent is considered clinically significant and may trigger further assessment. Values below 90 percent often require urgent medical attention and supplemental oxygen therapy.
+
+Management focuses on treating the underlying cause while ensuring adequate oxygen delivery. Healthcare providers may administer supplemental oxygen, monitor respiratory status, and perform diagnostic testing to determine the source of oxygen impairment.

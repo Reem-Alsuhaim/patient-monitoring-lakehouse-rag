@@ -1,2 +1,12 @@
 Patients in ICU should maintain oxygen saturation above 94%.
 Heart rate above 100 bpm may indicate tachycardia.
+
+Intensive Care Unit monitoring involves continuous observation of critically ill patients using advanced monitoring systems. Healthcare providers track vital signs such as heart rate, oxygen saturation, respiratory rate, blood pressure, and body temperature.
+
+Continuous monitoring helps clinicians identify physiological deterioration before severe complications develop. Changes in heart rate or oxygen saturation may indicate infection, respiratory failure, cardiac instability, or other medical emergencies.
+
+Alarm thresholds are often configured to notify staff when measurements exceed predefined limits. Persistent tachycardia, severe hypoxemia, or sudden blood pressure changes may require immediate intervention.
+
+Modern monitoring systems generate large volumes of physiological data that can be analyzed for trends and risk prediction. Data engineering pipelines frequently process these measurements to support clinical decision-making, quality improvement, and operational monitoring.
+
+Accurate collection, validation, and storage of patient monitoring data are essential for patient safety and healthcare analytics.
